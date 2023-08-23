@@ -64,33 +64,35 @@ class _Body2State extends State<Body2> {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 30),
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(10),
-              child: Center(
-                child: Text(
-                  "Find your product",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black87,
-                    fontSize: 30,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(0),
+                child: Center(
+                  child: Text(
+                    "Find your product",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black87,
+                      fontSize: 30,
+                    ),
                   ),
                 ),
               ),
-            ),
-            AspectRatio(
-              aspectRatio: 0.85,
-              child: PageView.builder(
-                itemCount: productsList.length,
-                physics: ClampingScrollPhysics(),
-                controller: _pageController,
-                itemBuilder: (context, index) {
-                  return carouselView(index);
-                },
+              AspectRatio(
+                aspectRatio: 0.85,
+                child: PageView.builder(
+                  itemCount: productsList.length,
+                  physics: ClampingScrollPhysics(),
+                  controller: _pageController,
+                  itemBuilder: (context, index) {
+                    return carouselView(index);
+                  },
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -127,7 +129,7 @@ class _Body2State extends State<Body2> {
               }));
             },
             child: Container(
-              height: 370,
+              height: 360,
               width: 280,
               decoration: BoxDecoration(
                 color: Colors.white,

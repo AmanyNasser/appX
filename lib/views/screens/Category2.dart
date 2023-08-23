@@ -65,43 +65,79 @@ class _Category2State extends State<Category2> {
                   icon: Icon(Icons.help)),
             ],
           ),
-          body: ListView(
-            physics: const BouncingScrollPhysics(),
-            children: snapshot.data!.docs.map((DocumentSnapshot document) {
-              Map<String, dynamic> data =
-                  document.data()! as Map<String, dynamic>;
-              return Column(
-                children: [
-                  ListTile(
-                    title: InkWell(
-                        onTap: () {},
-                        child: Image.asset(
-                          data['image'],
-                          fit: BoxFit.cover,
-                        )),
-                    subtitle: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Center(
-                          child: Text(
-                        data['name'],
-                        style: TextStyle(
-                            fontSize: 30, fontWeight: FontWeight.bold),
-                      )),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 20),
-                    child: Divider(
-                      height: 10,
-                      color: Colors.blue,
-                    ),
-                  )
-                ],
-              );
-            }).toList(),
+          body: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: GridView.count(
+              crossAxisCount: 2,
+              mainAxisSpacing: 20,
+              crossAxisSpacing: 20,
+              children: [
+                gridViewCategoryItem(
+                    img: 'assets/Category/iphoneCat.png',
+                    name: 'Iphones',
+                    context: context),
+                gridViewCategoryItem(
+                    img: 'assets/Category/phoneCat.jpg',
+                    name: 'Smart Phones',
+                    context: context),
+                gridViewCategoryItem(
+                    img: 'assets/Category/airpodsCat.jpg',
+                    name: 'AirPods',
+                    context: context),
+                gridViewCategoryItem(
+                    img: 'assets/Category/headsetCat.jpg',
+                    name: 'Headsets',
+                    context: context),
+                gridViewCategoryItem(
+                    img: 'assets/Category/screenCat.jpeg',
+                    name: 'Screens',
+                    context: context),
+                gridViewCategoryItem(
+                    img: 'assets/Category/smartwatchCat.jpg',
+                    name: 'SmartWatches',
+                    context: context),
+              ],
+            ),
           ),
         );
       },
     );
   }
+}
+
+Widget gridViewCategoryItem(
+    {required String img, required String name, required var context}) {
+  return InkWell(
+    onTap: () {},
+    child: Container(
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20), color: Colors.black12),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image(
+              image: AssetImage(
+                img,
+              ),
+              fit: BoxFit.fill,
+              height: 100,
+              width: 100,
+            ),
+            const SizedBox(
+              height: 5,
+            ),
+            Text(
+              name,
+              style: const TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
 }

@@ -64,164 +64,158 @@ class _Body1State extends State<Body1> {
             onTap: () {
               FocusScope.of(context).unfocus();
             },
-            child: ListView(
-              children: [
-                Center(
-                  child: Stack(
-                    children: [
-                      Container(
-                        height: 130,
-                        width: 130,
-                        decoration: BoxDecoration(
-                            border: Border.all(width: 4, color: Colors.white),
-                            boxShadow: [
-                              BoxShadow(
-                                  spreadRadius: 2,
-                                  blurRadius: 10,
-                                  color: Colors.black.withOpacity(0.1))
-                            ],
-                            shape: BoxShape.circle,
-                            image: DecorationImage(
-                                fit: BoxFit.cover,
-                                image: NetworkImage(
-                                    "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"))),
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Center(
+                    child: Stack(
+                      children: [
+                        Container(
+                          height: 130,
+                          width: 130,
+                          decoration: BoxDecoration(
+                              border: Border.all(width: 4, color: Colors.white),
+                              boxShadow: [
+                                BoxShadow(
+                                    spreadRadius: 2,
+                                    blurRadius: 10,
+                                    color: Colors.black.withOpacity(0.1))
+                              ],
+                              shape: BoxShape.circle,
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: NetworkImage(
+                                      "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"))),
+                        ),
+                        Positioned(
+                            right: 0,
+                            bottom: 0,
+                            child: Container(
+                              height: 40,
+                              width: 40,
+                              decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  border: Border.all(
+                                    width: 4,
+                                    color: Colors.white,
+                                  ),
+                                  color: Colors.blue),
+                              child: Icon(
+                                Icons.edit,
+                                color: Colors.white,
+                              ),
+                            )),
+                      ],
+                    ),
+                  ),
+
+                  const SizedBox(height: 20),
+                  Center(child: Text("$email \n ")),
+
+                  TextFormField(
+                    initialValue: "mohammed nagib",
+                    readOnly: true,
+                    cursorColor: Color.fromARGB(255, 222, 216, 208),
+                    keyboardType: TextInputType.emailAddress,
+                    decoration: InputDecoration(
+                      focusedBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(
+                            color: Color.fromARGB(255, 222, 216, 208),
+                          ),
+                          borderRadius: BorderRadius.circular(12)),
+                      enabledBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(
+                            color: Color.fromARGB(255, 222, 216, 208),
+                          ),
+                          borderRadius: BorderRadius.circular(12)),
+                      contentPadding: const EdgeInsets.only(top: 10),
+                      prefixIcon: const Icon(
+                        Icons.person,
+                        color: Color.fromARGB(255, 242, 171, 78),
                       ),
-                      Positioned(
-                          right: 0,
-                          bottom: 0,
-                          child: Container(
-                            height: 40,
-                            width: 40,
-                            decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                border: Border.all(
-                                  width: 4,
-                                  color: Colors.white,
-                                ),
-                                color: Colors.blue),
-                            child: Icon(
-                              Icons.edit,
-                              color: Colors.white,
-                            ),
-                          )),
-                    ],
+                      labelText: " Your Name",
+                    ),
                   ),
-                ),
+                  SizedBox(height: 10),
+                  // Text("Your password: \n  "),
+                  TextFormField(
+                    initialValue: "************",
+                    readOnly: true,
+                    cursorColor: Color.fromARGB(255, 222, 216, 208),
+                    keyboardType: TextInputType.visiblePassword,
+                    decoration: InputDecoration(
+                      focusedBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(
+                            color: Color.fromARGB(255, 222, 216, 208),
+                          ),
+                          borderRadius: BorderRadius.circular(12)),
+                      enabledBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(
+                            color: Color.fromARGB(255, 222, 216, 208),
+                          ),
+                          borderRadius: BorderRadius.circular(12)),
+                      contentPadding: const EdgeInsets.only(top: 5),
+                      prefixIcon: const Icon(
+                        Icons.password,
+                        color: Color.fromARGB(255, 242, 171, 78),
+                      ),
+                      labelText: "password",
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  // Text("Your Mobile Number: \n  "),
+                  TextFormField(
+                    initialValue: "01234567891",
+                    readOnly: true,
+                    cursorColor: Color.fromARGB(255, 222, 216, 208),
+                    keyboardType: TextInputType.visiblePassword,
+                    decoration: InputDecoration(
+                      focusedBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(
+                            color: Color.fromARGB(255, 222, 216, 208),
+                          ),
+                          borderRadius: BorderRadius.circular(12)),
+                      enabledBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(
+                            color: Color.fromARGB(255, 222, 216, 208),
+                          ),
+                          borderRadius: BorderRadius.circular(12)),
+                      contentPadding: const EdgeInsets.only(top: 5),
+                      prefixIcon: const Icon(
+                        Icons.phone_android,
+                        color: Color.fromARGB(255, 242, 171, 78),
+                      ),
+                      labelText: "Phone number",
+                    ),
+                  ),
 
-                const SizedBox(height: 20),
-                Center(child: Text("$email \n ")),
-
-                TextFormField(
-                  cursorColor: Color.fromARGB(255, 222, 216, 208),
-                  keyboardType: TextInputType.emailAddress,
-                  decoration: InputDecoration(
-                    focusedBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                          color: Color.fromARGB(255, 222, 216, 208),
-                        ),
-                        borderRadius: BorderRadius.circular(12)),
-                    enabledBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                          color: Color.fromARGB(255, 222, 216, 208),
-                        ),
-                        borderRadius: BorderRadius.circular(12)),
-                    contentPadding: const EdgeInsets.only(top: 10),
-                    prefixIcon: const Icon(
-                      Icons.person,
-                      color: Color.fromARGB(255, 242, 171, 78),
-                    ),
-                    labelText: " Your Name",
-                  ),
-                ),
-                SizedBox(height: 10),
-                // Text("Your password: \n  "),
-                TextFormField(
-                  cursorColor: Color.fromARGB(255, 222, 216, 208),
-                  keyboardType: TextInputType.visiblePassword,
-                  decoration: InputDecoration(
-                    focusedBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                          color: Color.fromARGB(255, 222, 216, 208),
-                        ),
-                        borderRadius: BorderRadius.circular(12)),
-                    enabledBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                          color: Color.fromARGB(255, 222, 216, 208),
-                        ),
-                        borderRadius: BorderRadius.circular(12)),
-                    contentPadding: const EdgeInsets.only(top: 5),
-                    prefixIcon: const Icon(
-                      Icons.password,
-                      color: Color.fromARGB(255, 242, 171, 78),
-                    ),
-                    labelText: " $password",
-                  ),
-                ),
-                SizedBox(height: 10),
-                // Text("Your Mobile Number: \n  "),
-                TextFormField(
-                  cursorColor: Color.fromARGB(255, 222, 216, 208),
-                  keyboardType: TextInputType.visiblePassword,
-                  decoration: InputDecoration(
-                    focusedBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                          color: Color.fromARGB(255, 222, 216, 208),
-                        ),
-                        borderRadius: BorderRadius.circular(12)),
-                    enabledBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                          color: Color.fromARGB(255, 222, 216, 208),
-                        ),
-                        borderRadius: BorderRadius.circular(12)),
-                    contentPadding: const EdgeInsets.only(top: 5),
-                    prefixIcon: const Icon(
-                      Icons.phone_android,
-                      color: Color.fromARGB(255, 242, 171, 78),
-                    ),
-                    labelText: " +20 1045678911",
-                  ),
-                ),
-
-                SizedBox(height: 10),
-                TextFormField(
-                  cursorColor: Color.fromARGB(255, 222, 216, 208),
-                  keyboardType: TextInputType.visiblePassword,
-                  decoration: InputDecoration(
-                    focusedBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                          color: Color.fromARGB(255, 222, 216, 208),
-                        ),
-                        borderRadius: BorderRadius.circular(12)),
-                    enabledBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                          color: Color.fromARGB(255, 222, 216, 208),
-                        ),
-                        borderRadius: BorderRadius.circular(12)),
-                    contentPadding: const EdgeInsets.only(top: 5),
-                    prefixIcon: const Icon(
-                      Icons.location_city,
-                      color: Color.fromARGB(255, 242, 171, 78),
-                    ),
-                    labelText: " Your City",
-                  ),
-                ),
-
-                SizedBox(height: 40),
-                Padding(
-                  padding: const EdgeInsets.only(right: 60, left: 60),
-                  child: TextButton(
-                    onPressed: () {
-                      print("Edits Saved");
-                    },
-                    child: Text(
-                      'Save Edit',
-                      style: TextStyle(
-                          fontSize: 20,
-                          color: Color.fromARGB(255, 241, 148, 26)),
+                  SizedBox(height: 10),
+                  TextFormField(
+                    initialValue: "Mansora",
+                    readOnly: true,
+                    cursorColor: Color.fromARGB(255, 222, 216, 208),
+                    keyboardType: TextInputType.visiblePassword,
+                    decoration: InputDecoration(
+                      focusedBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(
+                            color: Color.fromARGB(255, 222, 216, 208),
+                          ),
+                          borderRadius: BorderRadius.circular(12)),
+                      enabledBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(
+                            color: Color.fromARGB(255, 222, 216, 208),
+                          ),
+                          borderRadius: BorderRadius.circular(12)),
+                      contentPadding: const EdgeInsets.only(top: 5),
+                      prefixIcon: const Icon(
+                        Icons.location_city,
+                        color: Color.fromARGB(255, 242, 171, 78),
+                      ),
+                      labelText: " Your City",
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ));

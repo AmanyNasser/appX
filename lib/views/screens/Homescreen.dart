@@ -22,7 +22,6 @@ class _HomescreenState extends State<Homescreen> {
   List<Widget> page = [
     Body1(),
     Body2(),
-    Body3(),
     Category2(),
   ];
 
@@ -32,7 +31,7 @@ class _HomescreenState extends State<Homescreen> {
       body: Column(
         children: [
           Container(
-            height: 600,
+            height: 700,
             child: page[currentIndex],
           ),
           /* Center(
@@ -58,12 +57,6 @@ class _HomescreenState extends State<Homescreen> {
                 color: Colors.black,
               ),
               label: 'Main'),
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.favorite,
-                color: Colors.black,
-              ),
-              label: 'Favourits'),
           BottomNavigationBarItem(
               icon: Icon(
                 Icons.category,
